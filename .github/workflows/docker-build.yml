@@ -15,9 +15,6 @@ on:
       file:
         required: true
         type: string
-      target:
-        required: true
-        type: string
     secrets:
       GH_TOKEN:
         required: true
@@ -52,4 +49,3 @@ jobs:
           file: ${{ inputs.file }}
           push: true
           tags: ${{ steps.meta.outputs.tags }}
-          target: ${{ inputs.target }}
