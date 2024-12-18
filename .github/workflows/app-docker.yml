@@ -1,0 +1,17 @@
+name: Docker image build for app
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  app:
+    uses: ./.github/workflows/docker-build.yml
+    with:
+      name: "tinyproxy"
+      username: "ajayyy"
+      folder: "."
+      file: "Dockerfile"
+    secrets:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
